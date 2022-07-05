@@ -24,11 +24,12 @@ img{
 }
 
 .home{
-    
+  color:white;
+  font: arial;  
 }
 
 
-/* 
+
 body {
     height: 100vh;
     background: linear-gradient(15deg, #00a9f1, #cf00f1);
@@ -103,5 +104,5 @@ body {
     transform: translateY(100%);
   }
 
-  */
+
 
