@@ -1,4 +1,24 @@
-.background{
-
+.back{
+    max-width: fit-content;
+    max-height: fit-content;
     
+}
+
+img{
+    height: 100%;
+    width:100%;
+}
+
+.navbar{
+    color: white;
+    height: 80px;
+}
+
+.navlogo{
+    height: 80px;
+    width: 80px;
+}
+
+.navbarbrand{
+    float: left;
 }
