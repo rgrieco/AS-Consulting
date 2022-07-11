@@ -9,6 +9,8 @@ img{
     width:100%;
 }
 
+
+
 .navbar{
     color: white;
     height: 80px;
@@ -29,6 +31,7 @@ img{
   float: right; 
 }
 
+/* ------------ Efecto de servicios ------------*/
 @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);
@@ -44,6 +47,31 @@ img{
   background: white;
   padding: 30px;
 }
+/* ------------ Efecto de servicios ------------*/
+/* ----------- Efecto de texto sobre imagen --------- */
+
+@keyframes onimageleft{
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(-50%);
+  }
+
+}
+
+.onimage {
+  animation: 1s ease-out 0s 1 onimageleft;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  }
+
+  /* ----------- Efecto de texto sobre imagen --------- */
 
 .footers-icon{
 max-width: 30px;
