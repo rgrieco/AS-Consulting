@@ -1,6 +1,6 @@
 .back{
-    max-width: fit-content;
-    max-height: fit-content;
+    max-width: fit-content; 
+    max-height: fit-content; /*alto*/
     position: relative;
     
 }
@@ -89,3 +89,12 @@ max-height: 30px;
 max-width: 200px;
 max-height: 200px;
          }
+.newsletter{
+  border: 10px;
+  border-radius: 2px;
+  border-color: white;
+}
+
+.footer{
+  position: center;
+}
