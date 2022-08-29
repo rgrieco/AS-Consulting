@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,46 +20,37 @@
 
     <!--AGREGAR LA BARRA DE NAVEGACION Y MENU-->
     <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top" >
-                <div class="container-fluid fixed-top">
-                  <img class="navlogo" src="img/logoSVG.svg">
-
-                  <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                    <li>
-                      <a href="index.html" class="nav-link text-black">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                        Inicio
-                      </a>
-                    </li>
-                    <li>
-                      <a href="servicios.html" class="nav-link text-black">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                        Servicios
-                      </a>
-                    </li>
-                    <li>
-                      <a href="eventos.html" class="nav-link text-black">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                        Nuestra Empresa
-                      </a>
-                    </li>
-                    <li>
-                      <a href="multas.html" class="nav-link text-black">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                        Novedades
-                      </a>
-                    </li>
-                    <li>
-                      <a href="integrantes.html" class="nav-link text-black">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                        Contacto
-                      </a>
-                    </li>
-                  </ul>
-                 </div>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
+          <div class="container-fluid">
+              <img class="navlogo" src="img/logoSVG.svg">
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                  <div class="offcanvas-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav position-relative">
+                      <!-- Links de navegacion de la web-->
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="nuestraempresa.html">Nuestra Empresa</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+        </nav>
       </header>
 <!-- Imagen principal y efectos de presentacion-->
         
@@ -69,7 +60,7 @@
               <h1 class="fw-normal">AS Consulting</h1>
               <p>Brindamos servicios de asesoría y outsourcing en contabilidad, laboral e impuestos, desde Uruguay al mundo.</p>
               <p><a class="btn btn-secondary" href="servicios.html">Más información &raquo;</a></p>
-            </div>
+             </div>
            </div> 
 <!--SECCION DE SERVICIOS-->
         <br></br>
@@ -290,7 +281,8 @@
 
 
   </div><!-- /.container -->
-
+<br>
+<br>
 
 
 <!--PIE DE PAGINA-->
@@ -302,7 +294,7 @@
       <!-- Section: Social media -->
       
       <!-- Section: Form -->
-      <section class="">
+      <section class="newsletter">
         <form action="">
           <!--Grid row-->
           <div class="row d-flex justify-content-center">
@@ -339,23 +331,19 @@
       <!-- Section: Form -->
   
       <!-- Section: Text -->
-      <section class="mb-4">
-        <p style="font-family:Arial, Helvetica, sans-serif">
-            En todos los casos, brindamos un servicio integral y personalizado adecuado a las necesidades del cliente, lo cual marca nuestra principal diferencia.
-        </p>
-      </section>
+      
     <div>
       <br>
     </div>
       <!-- Section: Text -->
   
       <!-- Section: Links -->
-      <section class="">
+      <section class="footer">
         <!--Grid row-->
         <div class="row">
           <!--Grid column 1-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <img class="footer-logo" src="img/logoSVG.svg">
+          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+            <img class="footer-logo" style="padding: auto;" src="img/logoSVG.svg">
           </div>
           <!--Grid column-->
   
@@ -364,54 +352,12 @@
             <h5 class="text-footer">AS Consulting</h5>
             <ul class="list-unstyled mb-0">
               <li>
-                <img class="footers-icon" src="img/footer-02.svg">
-                <p>contacto@asconsulting.com.uy</p>
+               <p> <img class="footers-icon" src="img/footer-02.svg">
+                contacto@asconsulting.com.uy</p>
               </li>
               <li>
-                <img class="footers-icon" src="img/footer-03.svg">
-                <p>(+598) 99 226 320</p>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-  
-          <!--Grid column 3-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-  
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-  
-          <!--Grid column 4-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-  
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
+               <p><img class="footers-icon" src="img/footer-03.svg">
+                (+598) 99 226 320</p>
               </li>
             </ul>
           </div>
@@ -425,13 +371,12 @@
   
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Creafinity:
-      <a class="text-white" href="https://creafinity.com.uy/">Creafinity.com.uy</a>
+      
+      <a style="color:black;" href="https://creafinity.com.uy/">© 2022 Creafinity</a>
     </div>
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
-
 
 
         <!-- JavaScript Bundle with Popper -->
@@ -440,7 +385,5 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
 </body>
-
-
 
 </html>
