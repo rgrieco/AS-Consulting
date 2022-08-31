@@ -32,6 +32,13 @@ img{
   float: right; 
 }
 
+.footerglobal {
+  position: relative;
+  width:100%;
+  left:0px;
+  bottom:0px;
+}
+
 /* ------------ Efecto de servicios ------------*/
 @keyframes slideInFromLeft {
     0% {
@@ -212,3 +219,23 @@ max-height: 150px;
 
 
 /* ----------- Efecto tarjeta de novedades  --------- */
+
+/* ----------- Texto de novedades  --------- */
+
+.nota{
+position: relative;
+text-align: justify;
+margin-left: 15%;
+margin-right: 15%;
+margin-top: 5%;
+margin-bottom: 5%;
+width: 70%;
+}
+
+.subtitulo{
+  font-weight: bold;
+  margin-top:2%;
+  margin-bottom: 2%;
+}
+
+/* ----------- Texto de novedades  --------- */
