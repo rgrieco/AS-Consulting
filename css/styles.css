@@ -248,6 +248,26 @@ margin-bottom: 1%;
 
 }
 
+.enumerado {
+  margin-left: 30px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+
+.destacado2 {
+  text-decoration: underline;
+  margin-left: 100px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+
+s {
+  text-decoration: underline;
+  font-weight:bold;
+}
+
 /* ----------- Texto de novedades  --------- */
 
 
