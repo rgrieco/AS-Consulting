@@ -77,7 +77,9 @@ img{
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  color: black;
+  font-weight: ;
+  font-size: xx-large;
   }
 
   /* ----------- Efecto de texto sobre imagen --------- */
@@ -266,6 +268,10 @@ margin-bottom: 1%;
 s {
   text-decoration: underline;
   font-weight:bold;
+}
+
+.lead{
+  text-align: justify;
 }
 
 /* ----------- Texto de novedades  --------- */
