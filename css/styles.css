@@ -78,7 +78,6 @@ img{
   transform: translate(-50%, -50%);
   text-align: center;
   color: black;
-  font-weight: ;
   font-size: xx-large;
   }
 
@@ -333,3 +332,44 @@ svg {
 polyline {
   transition: all 250ms ease-in-out;
 }
+
+/*------ EFECTO CONTADOR------*/
+
+bodycontenedor {
+  margin: 0;
+  height: ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor {
+  height:;
+  width:;
+  position: relative;
+}
+
+.color_fondo {
+  height: 0%;
+  width: 100%;
+  background-color: yellow;
+}
+
+.numero {
+  height: 10%;
+  width: 10%;
+  font-size: 6.8em;
+  font-family: sans-serif;
+  color: black;
+  background-color:;
+  position:;
+  mix-blend-mode:;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+/*------ EFECTO CONTADOR------*/
