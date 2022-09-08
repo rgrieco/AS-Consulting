@@ -5,7 +5,7 @@
     
 }
 
-  img:hover{
+  #fondo:hover{
   
   transition: all 0.6s ease;
   
@@ -87,7 +87,9 @@ img{
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  font-size: x-large;
+  font-size: medium;
+  width: fit-content;
+  height: fit-content;
   }
 
   /* ----------- Efecto de texto sobre imagen --------- */
