@@ -4,7 +4,7 @@ let cantidad = 0;
 let tiempo=setInterval(() =>{
 cantidad+=1
 numero.textContent=cantidad
-    if(cantidad===100)
+    if(cantidad===15)
     {
         clearInterval(tiempo)
     }

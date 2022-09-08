@@ -384,3 +384,14 @@ bodycontenedor {
   font-size: 35px;
   color: #36A0FF;
 }
+
+/*------ EFECTO CONTADOR------*/
+
+.box{
+  width: 200px;
+  height: 200px;
+  background-image: url(/img/perfil.jpeg);
+  background-size: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
