@@ -1,20 +1,25 @@
 .back{
-    max-width: fit-content; 
+
     max-height: fit-content; /*alto*/
     position: relative;
     
 }
   #fondo{
 
-  margin-top: 70px;
+  margin-top: 80px;
+
   }
 
 
 img{
     height:100%;
-    width:106%; 
+    width:100%; 
+
 }
 
+body{
+  background-size: cover;
+}
 
 
 .navbar{
