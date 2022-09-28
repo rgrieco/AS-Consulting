@@ -190,7 +190,7 @@ max-height: 150px;
   color: #ff3636;
   line-height: 20px;
   font-size: 20px;
-  text-transform:;
+
 }
 
 .card .details .center h1 span {
@@ -376,15 +376,13 @@ polyline {
 
 bodycontenedor {
   margin: 0;
-  height: ;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .contenedor {
-  height: ;
-  width: ;
   position: relative;
 }
 
@@ -400,9 +398,6 @@ bodycontenedor {
   font-size: 6.8em;
   font-family: sans-serif;
   color: black;
-  background-color:;
-  position:;
-  mix-blend-mode:;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -433,6 +428,9 @@ bodycontenedor {
   background-size: cover;
   border-radius: 50%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 
