@@ -246,12 +246,14 @@ margin-right: 15%;
 margin-top: 5%;
 margin-bottom: 5%;
 width: 70%;
+font-family: serif;
 }
 
 .subtitulo{
   font-weight: bold;
   margin-top:2%;
   margin-bottom: 2%;
+  font-family: serif;
   
 }
 
@@ -260,6 +262,7 @@ text-decoration: underline;
 margin-left: 30px;
 margin-top: 1%;
 margin-bottom: 1%;
+font-family: serif;
 
 }
 
@@ -267,6 +270,7 @@ margin-bottom: 1%;
   margin-left: 30px;
   margin-top: 1%;
   margin-bottom: 1%;
+  font-family: serif;
 
 }
 
@@ -275,16 +279,36 @@ margin-bottom: 1%;
   margin-left: 100px;
   margin-top: 1%;
   margin-bottom: 1%;
+  font-family: serif;
 
 }
 
 s {
   text-decoration: underline;
   font-weight:bold;
+  font-family: serif;
 }
 
 .lead{
   text-align: justify;
+}
+
+p{
+  font-family: serif;
+
+}
+h2{
+  font-family: serif;
+}
+
+h1{
+  font-family: serif;
+}
+a{
+  font-family: serif;
+}
+h5{
+  font-family: serif;
 }
 
 /* ----------- Texto de novedades  --------- */
