@@ -69,31 +69,6 @@ body{
 /* ------------ Efecto de servicios ------------*/
 /* ----------- Efecto de texto sobre imagen --------- */
 
-@keyframes onimageleft{
-  0%{
-    transform: translateX(-100%);
-  }
-  100%{
-    transform: translateX(-50%);
-  }
-
-}
-
-.onimage {
-  animation: 1s ease-out 0s 1 onimageleft;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  font-size: medium;
-  width: fit-content;
-  height: fit-content;
-  filter: drop-shadow(5px 5px 5px black);
-  }
-
   /* ----------- Efecto de texto sobre imagen --------- */
 
 .footers-icon{
@@ -104,11 +79,17 @@ max-height: 30px;
 
 .text-footer{
    font-family: Arial, Helvetica, sans-serif;
+  text-align-last: right;
     }
+
+#contacto{
+ text-align-last: right;
+}
 
 .footer-logo{
 max-width: 150px;
 max-height: 150px;
+text-align-last: left;
          }
 .newsletter{
   border: 10px;
@@ -118,7 +99,11 @@ max-height: 150px;
 
 .footer{
   position: center;
+
 }
+
+
+
 /* ----------- Efecto de texto sobre imagen --------- */
 
 
@@ -247,7 +232,7 @@ margin-top: 5%;
 margin-bottom: 5%;
 width: 60%;
 font-family: serif;
-font-size: 16px;
+font-size: 18px;
 }
 
 .subtitulo{

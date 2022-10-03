@@ -54,7 +54,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas-body" style="align-content: center; align-self: center;">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav position-relative">
                 <!-- Links de navegacion de la web-->
                 <li class="nav-item">
@@ -70,11 +70,7 @@
                           <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="servicios.html" role="button" aria-expanded="false">Servicios</a>
     <ul class="dropdown-menu">
-      <!--<li><a class="dropdown-item" href="#">Asesoramiento Tributario</a></li> -->
-      <!--<li><a class="dropdown-item" href="#">Asesoramiento Laboral</a></li> -->
-      <!--li><a class="dropdown-item" href="#">Servicios de Consultoría</a></li> -->
-      <!--<li><a class="dropdown-item" href="#">Contabilidad</a></li> -->
-      <!--<li><a class="dropdown-item" href="#">Proyectos de Inversión</a></li> -->
+      
       <li><a class="dropdown-item" href="Servicios/sociedades.html">Creación de SAS</a></li>
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="servicios.html">Todos los Servicios</a></li> 
@@ -104,22 +100,23 @@
       </nav>
     </header>
     <!-- Imagen principal y efectos de presentacion-->
-    <!--
-    <div class="back">
-      <img src="img/background.jpg" />
-      <div class="onimage">
-        <h1 class="fw-normal">Nuestra Empresa</h1>
-        <p></p>
-      </div>
-    </div>
--->
+   
+        <div class="back">
+             <img src="img/background2.png" id="fondo" alt="Brindamos servicios de asesoría y outsourcing en contabilidad, laboral e impuestos, desde Uruguay al mundo.">
+             <!--<div class="onimage">
+                <h1 class="fw-normal">Servicios</h1>
+                <p style="font-size:2em;">Brindamos servicios de asesoría y outsourcing en contabilidad, laboral e impuestos, desde Uruguay al mundo.</p>
+              </div> -->
+        </div> 
+
+   
     <!-- Imagen principal y efectos de presentacion-->
 
     <!--TITULO -->
 
     <div>
-      <br /><br /><br /><br /><br />
-      <h1 style="text-align: center; margin: 3%">Contacto</h1>
+      <br />
+      <h1 style="text-align: center; margin: 3%; color: rgb(240, 158, 6)">Contacto</h1>
     </div>
 
     <!--TITULO-->
@@ -237,12 +234,6 @@
         <div class="container p-4">
           <!-- Section: Social media -->
 
-          <!-- Section: Form -->
-          
-          <!-- Section: Form -->
-
-          <!-- Section: Text -->
-
           <div>
             <br />
           </div>
@@ -253,7 +244,7 @@
             <!--Grid row-->
             <div class="row">
               <!--Grid column 1-->
-              <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+              <div class="col-lg-6 col-md-6 mb-4 mb-md-0" style="text-align-last: left;">
                 <img
                   class="footer-logo"
                   style="padding: auto"
@@ -263,20 +254,27 @@
               <!--Grid column-->
 
               <!--Grid column 2 DATOS DE CONTACTO-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-footer">AS Consulting</h5>
+              <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-footer">ASconsulting</h5>
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <p>
+                    <p id="contacto">
                       <img class="footers-icon" src="img/footer-02.svg" />
                       contacto@asconsulting.com.uy
                     </p>
                   </li>
                   <li>
-                    <p>
+                    <p id="contacto">
                       <img class="footers-icon" src="img/footer-03.svg" />
                       (+598) 99 226 320
                     </p>
+                  </li>
+                  <li>
+                  <div id="contacto">
+                         <a href="https://creafinity.com.uy/">
+                            <img class="footer-logo" style="padding: auto; width: 80px; float: center;;" src="img/LogoBase.png" alt="© 2022 Created & developed by Creafinity">
+                         </a>
+                  </div>
                   </li>
                 </ul>
               </div>
@@ -287,17 +285,6 @@
           <!-- Section: Links -->
         </div>
         <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div
-          class="text-center p-3"
-          style="background-color: rgba(13,110, 253, 0);"
-        >
-          <a style="color: black" href="https://creafinity.com.uy/"
-            >© 2022 Creafinity</a
-          >
-        </div>
-        <!-- Copyright -->
       </footer>
     </section>
     <!-- Footer -->
