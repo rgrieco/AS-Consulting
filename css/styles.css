@@ -79,17 +79,17 @@ max-height: 30px;
 
 .text-footer{
    font-family: Arial, Helvetica, sans-serif;
-  text-align-last: right;
+  text-align-last: center;
     }
 
 #contacto{
- text-align-last: right;
+ text-align-last: center;
 }
 
 .footer-logo{
 max-width: 150px;
 max-height: 150px;
-text-align-last: left;
+text-align-last: center;
          }
 .newsletter{
   border: 10px;
