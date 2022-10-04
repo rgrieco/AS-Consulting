@@ -23,48 +23,46 @@
 
     <!--AGREGAR LA BARRA DE NAVEGACION Y MENU-->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top" style="background-color:white;">
-            <div class="container-fluid">
-                <a href="/index.html"><img class="navlogo" src="/img/logoSVG.svg"></a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight">
-                    <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color:white; text-align: center;">
+          <div class="container-fluid">
+              <a href="/index.html"><img class="navlogo" src="/img/logoSVG.svg"></a>
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                    aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body" style="align-content: center; align-self: center;">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav position-relative">
-                            <!-- Links de navegacion de la web-->
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                  <div class="offcanvas-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                <div class="offcanvas-body" style="align-content: center; align-self: center;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav position-relative" style="width:600px;">
+                      <!-- Links de navegacion de la web-->
+                        <li id="color"  style="padding-left:2.5%; padding-right: 2.5%;" class="nav-item" >
+                          <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
                       
-                          <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="servicios.html" role="button" aria-expanded="false">Servicios</a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="/servicios/sociedades.html">Creación de SAS</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="/servicios.html">Todos los Servicios</a></li> 
-    </ul>
-  </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/nuestraempresa.html">Nuestra
-                                    Empresa</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/contacto.html">Contacto</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                          <li id="color" style="padding-left:2.5%; padding-right: 2.5%;"class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/servicios.html" role="button" aria-expanded="false">Servicios</a>
+                           <ul class="dropdown-menu">
+                               <li><a class="dropdown-item" href="/Servicios/Sociedades.html">Creación de SAS</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                               <li><a class="dropdown-item" href="/servicios.html">Todos los Servicios</a></li> 
+                            </ul>
+                          </li>
+                        </li>
+                        <li id="color" style="padding-left:2.5%; padding-right: 2.5%;" class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="/nuestraempresa.html">Nuestra Empresa</a>
+                        </li>
+                        <li id="color" style="padding-left:2.5%; padding-right: 2.5%;"class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                  </div>
+              </div>
             </div>
         </nav>
-    </header>
+      </header>
     <!-- TEXTO DE NOVEDADES-->
 
 <br>
@@ -217,12 +215,11 @@ Publicado: 28 Setiembre 2022
             </div>
             <!-- Section: Text -->
 
-            <!-- Section: Links -->
             <section class="footer">
             <!--Grid row-->
             <div class="row">
               <!--Grid column 1-->
-              <div class="col-lg-2 col-md-6 mb-4 mb-md-0" style="text-align-last: left;">
+              <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
                 <img
                   class="footer-logo"
                   style="padding: auto"
@@ -230,13 +227,15 @@ Publicado: 28 Setiembre 2022
                 />
               </div>
               <!--Grid column-->
-              <div class="col-lg-8 col-md-6 mb-4 mb-md-0">
+              
+                <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
              
-              </div>
+                 </div>
+
 
               <!--Grid column 2 DATOS DE CONTACTO-->
-              <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-footer">ASconsulting</h5>
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-footer">ASConsulting</h5>
                 <ul class="list-unstyled mb-0">
                   <li>
                     <p id="contacto">
@@ -247,13 +246,20 @@ Publicado: 28 Setiembre 2022
                   <li>
                     <p id="contacto">
                       <img class="footers-icon" src="/img/footer-03.svg" />
-                      (+598) 99 226 320
+                      (+598) 99 22 63 20
                     </p>
+                  </li>
+                  <li>
+                    <p id="contacto">
+                    <img class="footers-icon" src="/img/location.png" />
+                      Montevideo - Canelones
+                    </p>
+                    <p>Uruguay</p>
                   </li>
                   <li>
                   <div id="contacto">
                          <a href="https://creafinity.com.uy/">
-                            <img class="footer-logo" style="padding: auto; width: 80px; float: center;;" src="img/LogoBase.png" alt="© 2022 Created & developed by Creafinity">
+                            <img class="footer-logo" style="padding: auto; width: 80px; float: center;;" src="/img/LogoBase.png" alt="© 2022 Created & developed by Creafinity">
                          </a>
                   </div>
                   </li>

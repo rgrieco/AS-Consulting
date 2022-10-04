@@ -24,12 +24,13 @@ body{
 
 .navbar{
     color: white;
-    height: 80px;
+    height: 100px;
 }
 
 .navlogo{
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
+    margin-left:100%;
 }
 
 .navbarbrand{
@@ -78,8 +79,10 @@ max-height: 30px;
 }
 
 .text-footer{
-   font-family: Arial, Helvetica, sans-serif;
-  text-align-last: center;
+    font-family: serif;
+    text-align-last: center;
+    color:rgb(29, 62, 95); 
+    font-weight: bold;
     }
 
 #contacto{
@@ -423,4 +426,10 @@ bodycontenedor {
   transform: scale(1.1, 1.1);
   transition: .2s ease-in;
   /*100%*/
+}
+
+
+#color:hover{
+  background-color: rgba(13, 110, 253, 0.1);
+
 }
