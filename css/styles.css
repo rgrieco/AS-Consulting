@@ -6,7 +6,7 @@
 }
   #fondo{
 
-  margin-top: 80px;
+  margin-top: 100px;
 
   }
 
@@ -296,9 +296,26 @@ h1{
 a{
   font-family: serif;
 }
+
 h5{
   font-family: serif;
 }
+
+
+/* ----------- Estilos de barra de navegacion  --------- */
+#navbartext{
+  font-family: serif;
+  color: rgb(29, 62, 95);
+  font-weight: bold;
+  text-align: center;
+
+}
+
+#navproperties{
+    background-color: rgba(239, 245, 254);
+    text-align: center;
+}
+
 
 /* ----------- Texto de novedades  --------- */
 
@@ -429,7 +446,7 @@ bodycontenedor {
 }
 
 
-#color:hover{
+/* #color:hover{
   background-color: rgba(13, 110, 253, 0.1);
 
 }
