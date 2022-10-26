@@ -238,6 +238,18 @@ font-family: serif;
 font-size: 18px;
 }
 
+.notasas {
+  position: relative;
+  text-align: justify;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 80%;
+  font-family: serif;
+  font-size: 18px;
+}
+
 .subtitulo{
   font-weight: bold;
   margin-top:2%;
