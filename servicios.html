@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="Contador Público, Estudio contable, Servicios de Asesoramiento y Consultoría">
+    <meta content="Contador Público, Estudio contable, liquidación de sueldos, liquidación de impuestos y consultoría">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta version="Version 1.0">
     <title>Servicios</title>
@@ -19,47 +19,54 @@
 
 
     <!--AGREGAR LA BARRA DE NAVEGACION Y MENU-->
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light fixed-top">
+   <header>
+        <nav id="navproperties" class="navbar navbar-expand-lg fixed-top">
           <div class="container-fluid">
-           <a href="index.html"><img class="navlogo" src="img/logoSVG.svg"></a>
-        
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-              <div class="offcanvas-header">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav position-relative">
-                  <!-- Links de navegacion de la web-->
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="servicios.html">Servicios</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="nuestraempresa.html">Nuestra Empresa</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
-                  </li>
-                </ul>
+              <a href="index.html"><img class="navlogo" src="img/logoSVG.svg"></a>
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                  <div class="offcanvas-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                <div class="offcanvas-body" style="align-content: center; align-self: center;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav position-relative" style="width:600px;">
+                      <!-- Links de navegacion de la web-->
+                        <li id="color"  style="padding-right: 2.5%;" class="nav-item" >
+                          <a id="navbartext" class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+                        </li>
+                        <li class="nav-item">
+                      
+                          <li id="color" style="padding-left:2.5%; padding-right: 2.5%;"class="nav-item dropdown">
+                            <a id="navbartext" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="servicios.html" role="button" aria-expanded="false">SERVICIOS</a>
+                           <ul class="dropdown-menu">
+                               <li><a id="navbartext" class="dropdown-item" href="/Servicios/sociedades.html">Creación de SAS</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                               <li><a id="navbartext" class="dropdown-item" href="servicios.html">Todos los Servicios</a></li> 
+                            </ul>
+                          </li>
+                        </li>
+                        <li id="color" style="padding-left:2.5%; padding-right: 2.5%;" class="nav-item">
+                          <a id="navbartext" class="nav-link active" aria-current="page" href="nuestraempresa.html">NUESTRA EMPRESA</a>
+                        </li>
+                        <li id="color" style="padding-left:2.5%; padding-right: 2.5%;"class="nav-item">
+                          <a id="navbartext" class="nav-link active" aria-current="page" href="contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                  </div>
               </div>
             </div>
-          </div>
         </nav>
-    </header>
+      </header>
     <!-- Agregar imagen principal y efectos de presentacion-->
         <div class="back">
-             <img src="img/background.jpg" id="fondo">
-             <div class="onimage">
+             <img src="img/background2.png" id="fondo" alt="Brindamos servicios de asesoría y outsourcing en contabilidad, laboral e impuestos, desde Uruguay al mundo.">
+             <!--<div class="onimage">
                 <h1 class="fw-normal">Servicios</h1>
-                <p>Brindamos servicios de asesoría y outsourcing en contabilidad, laboral e impuestos, desde Uruguay al mundo.</p>
-              </div>
+                <p style="font-size:2em;">Brindamos servicios de asesoría y outsourcing en contabilidad, laboral e impuestos, desde Uruguay al mundo.</p>
+              </div> -->
         </div> 
       
 
@@ -75,7 +82,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%;">Contabilidad <span class="text-muted"></span></h2>
+        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%; color: rgb(240, 158, 6);">Contabilidad <span class="text-muted"></span></h2>
         <p class="lead">
           <br>
 El servicio engloba todo el proceso contable de la empresa; desde la registración, conciliación y análisis de la información contable, así como la preparación de los estados financieros anuales cumpliendo con las normas contables adecuadas legales vigentes en nuestro país..
@@ -86,7 +93,7 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
       </div>
       <div class="col-md-5">
             <title>Contabilidad</title><rect width="100%" height="100%" fill="#FFFFFF"/>
-            <img src="img/accountant.svg"></img>
+            <img src="img/accountant.svg" alt="Contabilidad"></img>
         </div>
 
     </div>
@@ -97,7 +104,7 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%;">Asesoramiento Laboral</h2>
+        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%; color: rgb(240, 158, 6);">Asesoramiento Laboral</h2>
         <p class="lead">
           <br>
             Nos especializamos en brindar servicios de outsourcing laboral, donde se incluye desde la liquidación mensual de haberes del personal, envío de nómina, confección de recibos de sueldo (papel o electrónicos), provisiones contables e informes laborales, manteniendo una adecuada actualización en un sector que se encuentra en constante cambio.
@@ -106,7 +113,7 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
         </p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img src="img/laboral.svg"></img>
+        <img src="img/recruting.png"alt="Asesoramiento Laboral"></img>
       </div>
     </div>
  <!-- SERVICIO 3 IMPUESTOS-->
@@ -114,14 +121,14 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%;">Asesoramiento Fiscal</h2>
+        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%; color: rgb(240, 158, 6);">Asesoramiento Fiscal</h2>
         <p class="lead">
           <br>
             En el área de impuestos buscamos asesorar en forma global, en búsqueda de la mejor conveniencia fiscal para el cliente acorde a la normativa actual, y analizando los diferentes beneficios fiscales a los que puede acceder, manteniendo una constante actualización en la materia.
         </p>
       </div>
       <div class="col-md-5">
-        <img src="img/impuestos.svg"></img>
+        <img src="img/impuestos.svg" alt="Asesoramiento Fiscal"></img>
       </div>
     </div>
 
@@ -131,21 +138,53 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
 
 <div class="row featurette">
   <div class="col-md-7 order-md-2">
-    <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%;">Proyectos de Inversion</h2>
+    <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%; color: rgb(240, 158, 6);">Proyectos de Inversion</h2>
     <p class="lead">
       <br>
         Contamos con un equipo especializado en la materia para análisis de Proyectos de Inversión, la optimización de los mismos, acorde a las características del proyecto y la normativa vigente, incluyendo su presentación ante COMAP y su posterior seguimiento.
     </p>
   </div>
   <div class="col-md-5 order-md-1">
-    <img src="img/laboral.svg"></img>
+    <img src="img/laboral.svg" alt="Proyectos de Inversión"></img>
   </div>
 </div>
+<!-- SERVICIO 5 CONSULTORIA-->
+    <hr class="featurette-divider">
 
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%; color: rgb(240, 158, 6);">Servicios de Consultoría</h2>
+        <p class="lead">
+          <br>
+            Nos enfocamos en ayudar a orientar a las empresas a solucionar problemas que identifican, o que necesitan identificar; conociendo el negocio y analizando con un equipo de profesionales especializados en la materia. Buscamos brindar conocimiento y estrategias, para que el cliente pueda implementar en forma efectiva en su organización, tanto en el área tecnológica, financiera y empresarial.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img src="img/consultoria.png" alt="Consultoría"></img>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- SERVICIO 6 SAS -->
+
+<div class="row featurette">
+  <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 2%; color: rgb(240, 158, 6);">Sociedades por Acciones Simplificadas</h2>
+    <p class="lead">
+      <br>
+        Nos encargamos de todo el proceso, desde la creación de la misma, hasta el mantenimiento de la contabilidad, libros e impuestos, brindando un servicio integral y personalizado a la medida de lo que necesitan nuestros clientes.
+    </p>
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img src="img/contrato.png" alt="Sociedad por Acciones Simplificadas"></img>
+  </div>
+</div>
 
     <!-- /END THE FEATURETTES -->
 
   </div>
+  <br>
   
   <!-- /.container -->
 
@@ -155,7 +194,7 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
 
 <!-- Footer -->
 <!-- Footer -->
-<footer class="text-center text-black" style="background-color: rgba(0, 0, 0, 0.2);">
+<footer class="text-center text-black" style="background-color: rgba(13,110, 253, 0.1);">
     <!-- Grid container -->
     <div class="container p-4">
       <!-- Section: Social media -->
@@ -186,7 +225,7 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
             <!--Grid column-->
             <div class="col-auto">
               <!-- Submit button -->
-              <button type="submit" class="btn btn-outline-light mb-4">
+              <button type="submit" class="btn btn-outline-primary mb-4">
                 Registrate
               </button>
             </div>
@@ -233,42 +272,62 @@ A su vez brindamos consultoría para el apoyo de los procedimientos administrati
   
       <!-- Section: Links -->
       <section class="footer">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column 1-->
-          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-            <img class="footer-logo" style="padding: auto;" src="img/logoSVG.svg">
-          </div>
-          <!--Grid column-->
-  
-          <!--Grid column 2 DATOS DE CONTACTO-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-footer">AS Consulting</h5>
-            <ul class="list-unstyled mb-0">
-              <li>
-               <p> <img class="footers-icon" src="img/footer-02.svg">
-                contacto@asconsulting.com.uy</p>
-              </li>
-              <li>
-               <p><img class="footers-icon" src="img/footer-03.svg">
-                (+598) 99 226 320</p>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </section>
+            <!--Grid row-->
+            <div class="row">
+              <!--Grid column 1-->
+              <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                <img
+                  class="footer-logo"
+                  style="padding: auto"
+                  src="img/logoSVG.svg"
+                />
+              </div>
+              <!--Grid column-->
+              
+                <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
+             
+                 </div>
+
+
+              <!--Grid column 2 DATOS DE CONTACTO-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-footer">ASConsulting</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <p id="contacto">
+                      <img class="footers-icon" src="img/footer-02.svg" />
+                      contacto@asconsulting.com.uy
+                    </p>
+                  </li>
+                  <li>
+                    <p id="contacto">
+                      <img class="footers-icon" src="img/footer-03.svg" />
+                      (+598) 99 22 63 20
+                    </p>
+                  </li>
+                  <li>
+                    <p id="contacto">
+                    <img class="footers-icon" src="img/location.png" />
+                      Montevideo - Canelones
+                    </p>
+                    <p>Uruguay</p>
+                  </li>
+                  <li>
+                  <div id="contacto">
+                         <a href="https://creafinity.com.uy/">
+                            <img class="footer-logo" style="padding: auto; width: 80px; float: center;;" src="img/LogoBase.png" alt="© 2022 Created & developed by Creafinity">
+                         </a>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </section>
       <!-- Section: Links -->
     </div>
     <!-- Grid container -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      
-      <a style="color:black;" href="https://creafinity.com.uy/">© 2022 Creafinity</a>
-    </div>
-    <!-- Copyright -->
   </footer>
   <!-- Footer -->
 

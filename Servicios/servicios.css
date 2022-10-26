@@ -1,0 +1,12 @@
+.imagennota{
+    max-height: fit-content;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+
+}
+
+#imgsas{
+        height: 60%;
+        width: 60%;
+}

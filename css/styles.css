@@ -1,38 +1,36 @@
 .back{
-    max-width: fit-content; 
+
     max-height: fit-content; /*alto*/
     position: relative;
     
 }
   #fondo{
 
-  filter:opacity(80%);
+  margin-top: 100px;
+
   }
 
-
-  #fondo:hover{
-  
-  transition: all 0.6s ease;
-  
-  filter: blur(5px);
-  }
 
 img{
     height:100%;
-    width:100%;
-    transition: all 0.8s ease;
+    width:100%; 
+
 }
 
+body{
+  background-size: cover;
+}
 
 
 .navbar{
     color: white;
-    height: 80px;
+    height: 100px;
 }
 
 .navlogo{
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
+    margin-left:100%;
 }
 
 .navbarbrand{
@@ -72,31 +70,6 @@ img{
 /* ------------ Efecto de servicios ------------*/
 /* ----------- Efecto de texto sobre imagen --------- */
 
-@keyframes onimageleft{
-  0%{
-    transform: translateX(-100%);
-  }
-  100%{
-    transform: translateX(-50%);
-  }
-
-}
-
-.onimage {
-  animation: 1s ease-out 0s 1 onimageleft;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  font-size: medium;
-  width: fit-content;
-  height: fit-content;
-  filter: drop-shadow(5px 5px 5px black);
-  }
-
   /* ----------- Efecto de texto sobre imagen --------- */
 
 .footers-icon{
@@ -106,12 +79,20 @@ max-height: 30px;
 }
 
 .text-footer{
-   font-family: Arial, Helvetica, sans-serif;
+    font-family: serif;
+    text-align-last: center;
+    color:rgb(29, 62, 95); 
+    font-weight: bold;
     }
+
+#contacto{
+ text-align-last: center;
+}
 
 .footer-logo{
 max-width: 150px;
 max-height: 150px;
+text-align-last: center;
          }
 .newsletter{
   border: 10px;
@@ -121,7 +102,11 @@ max-height: 150px;
 
 .footer{
   position: center;
+
 }
+
+
+
 /* ----------- Efecto de texto sobre imagen --------- */
 
 
@@ -140,8 +125,8 @@ max-height: 150px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  height: 400px;
-  background:;
+  height: 500px;
+ 
 }
 
 .card .image {
@@ -193,7 +178,7 @@ max-height: 150px;
   color: #ff3636;
   line-height: 20px;
   font-size: 20px;
-  text-transform:;
+
 }
 
 .card .details .center h1 span {
@@ -244,17 +229,32 @@ max-height: 150px;
 .nota{
 position: relative;
 text-align: justify;
-margin-left: 15%;
-margin-right: 15%;
+margin-left: 20%;
+margin-right: 20%;
 margin-top: 5%;
 margin-bottom: 5%;
-width: 70%;
+width: 60%;
+font-family: serif;
+font-size: 18px;
+}
+
+.notasas {
+  position: relative;
+  text-align: justify;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 80%;
+  font-family: serif;
+  font-size: 18px;
 }
 
 .subtitulo{
   font-weight: bold;
   margin-top:2%;
   margin-bottom: 2%;
+  font-family: serif;
   
 }
 
@@ -263,6 +263,7 @@ text-decoration: underline;
 margin-left: 30px;
 margin-top: 1%;
 margin-bottom: 1%;
+font-family: serif;
 
 }
 
@@ -270,6 +271,7 @@ margin-bottom: 1%;
   margin-left: 30px;
   margin-top: 1%;
   margin-bottom: 1%;
+  font-family: serif;
 
 }
 
@@ -278,17 +280,54 @@ margin-bottom: 1%;
   margin-left: 100px;
   margin-top: 1%;
   margin-bottom: 1%;
+  font-family: serif;
 
 }
 
 s {
   text-decoration: underline;
   font-weight:bold;
+  font-family: serif;
 }
 
 .lead{
   text-align: justify;
 }
+
+p{
+  font-family: serif;
+
+}
+h2{
+  font-family: serif;
+}
+
+h1{
+  font-family: serif;
+}
+a{
+  font-family: serif;
+}
+
+h5{
+  font-family: serif;
+}
+
+
+/* ----------- Estilos de barra de navegacion  --------- */
+#navbartext{
+  font-family: serif;
+  color: rgb(29, 62, 95);
+  font-weight: bold;
+  text-align: center;
+
+}
+
+#navproperties{
+    background-color: rgba(239, 245, 254);
+    text-align: center;
+}
+
 
 /* ----------- Texto de novedades  --------- */
 
@@ -354,15 +393,13 @@ polyline {
 
 bodycontenedor {
   margin: 0;
-  height: ;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .contenedor {
-  height: ;
-  width: ;
   position: relative;
 }
 
@@ -378,9 +415,6 @@ bodycontenedor {
   font-size: 6.8em;
   font-family: sans-serif;
   color: black;
-  background-color:;
-  position:;
-  mix-blend-mode:;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,4 +445,20 @@ bodycontenedor {
   background-size: cover;
   border-radius: 50%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.col-lg-4.zoomservices:hover {
+  transform: scale(1.1, 1.1);
+  transition: .2s ease-in;
+  /*100%*/
+}
+
+
+/* #color:hover{
+  background-color: rgba(13, 110, 253, 0.1);
+
 }
