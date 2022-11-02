@@ -79,7 +79,7 @@ max-height: 30px;
 }
 
 .text-footer{
-    font-family: serif;
+    font-family: Arial;
     text-align-last: center;
     color:rgb(29, 62, 95); 
     font-weight: bold;
@@ -116,7 +116,7 @@ text-align-last: center;
   margin: 0;
   padding: 0;
   background: #250008;
-  font-family: sans-serif;
+  font-family: Arial;
 }
 
 .card {
@@ -234,7 +234,7 @@ margin-right: 20%;
 margin-top: 5%;
 margin-bottom: 5%;
 width: 60%;
-font-family: serif;
+font-family: Arial;
 font-size: 18px;
 }
 
@@ -246,7 +246,7 @@ font-size: 18px;
   margin-top: 5%;
   margin-bottom: 5%;
   width: 80%;
-  font-family: serif;
+  font-family: Arial;
   font-size: 18px;
 }
 
@@ -254,7 +254,7 @@ font-size: 18px;
   font-weight: bold;
   margin-top:2%;
   margin-bottom: 2%;
-  font-family: serif;
+  font-family: Arial;
   
 }
 
@@ -263,7 +263,7 @@ text-decoration: underline;
 margin-left: 30px;
 margin-top: 1%;
 margin-bottom: 1%;
-font-family: serif;
+font-family: Arial;
 
 }
 
@@ -271,7 +271,7 @@ font-family: serif;
   margin-left: 30px;
   margin-top: 1%;
   margin-bottom: 1%;
-  font-family: serif;
+  font-family: Arial;
 
 }
 
@@ -280,14 +280,14 @@ font-family: serif;
   margin-left: 100px;
   margin-top: 1%;
   margin-bottom: 1%;
-  font-family: serif;
+  font-family: Arial;
 
 }
 
 s {
   text-decoration: underline;
   font-weight:bold;
-  font-family: serif;
+  font-family: Arial;
 }
 
 .lead{
@@ -295,28 +295,28 @@ s {
 }
 
 p{
-  font-family: serif;
+  font-family: Arial;
 
 }
 h2{
-  font-family: serif;
+  font-family: Arial;
 }
 
 h1{
-  font-family: serif;
+  font-family: Arial;
 }
 a{
-  font-family: serif;
+  font-family: Arial;
 }
 
 h5{
-  font-family: serif;
+  font-family: Arial;
 }
 
 
 /* ----------- Estilos de barra de navegacion  --------- */
 #navbartext{
-  font-family: serif;
+  font-family: Arial;
   color: rgb(29, 62, 95);
   font-weight: bold;
   text-align: center;
@@ -413,7 +413,7 @@ bodycontenedor {
   height: 10%;
   width: 10%;
   font-size: 6.8em;
-  font-family: sans-serif;
+  font-family: Arial;
   color: black;
   display: flex;
   justify-content: center;
