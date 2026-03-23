@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta id="meta-description" name="description" content="">
+  <title id="page-title">Novedades | AS Consulting</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    /* ── Barra de progreso de lectura ── */
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: rgb(240, 158, 6);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ── Navegación anterior / siguiente ── */
+    .post-nav {
+      border-top: 1px solid #e9ecef;
+      padding: 40px 0;
+      background: #f8fafb;
+    }
+    .post-nav-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 20px 24px;
+      border-radius: 10px;
+      background: white;
+      border: 1px solid #e0e7ef;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+      height: 100%;
+    }
+    .post-nav-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    .post-nav-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgb(240, 158, 6);
+    }
+    .post-nav-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgb(29, 62, 95);
+      line-height: 1.4;
+    }
+    .post-nav-arrow {
+      font-size: 18px;
+      color: rgb(29, 62, 95);
+      margin-bottom: 4px;
+    }
+
+    /* ── Artículos relacionados ── */
+    .related-posts {
+      padding: 60px 0 80px;
+      background: #fff;
+    }
+    .related-posts h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: rgb(29, 62, 95);
+      margin-bottom: 32px;
+    }
+
+    /* ── Estado de carga / 404 ── */
+    .post-not-found {
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    .post-not-found h1 {
+      font-size: 32px;
+      color: rgb(29, 62, 95);
+      margin-bottom: 16px;
+    }
+    .post-not-found p {
+      color: #666;
+      margin-bottom: 28px;
+    }
+
+    /* ── Cuerpo del artículo ── */
+    .article-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.85;
+      color: #1A2B3C;
+    }
+    .article-body h2 {
+      font-family: Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: rgb(240, 158, 6);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+    }
+    .article-body .subtitulo {
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: rgb(29, 62, 95);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      list-style: none;
+      display: block;
+    }
+    .article-body .destacado {
+      padding-left: 16px;
+      border-left: 3px solid rgb(240, 158, 6);
+      margin: 1rem 0 1rem 16px;
+      display: block;
+      color: #4a5568;
+      list-style: none;
+    }
+    .article-body .enumerado,
+    .article-body ul.enumerado {
+      margin-left: 24px;
+      margin-top: 0.4rem;
+      margin-bottom: 0.4rem;
+      padding-left: 0;
+      list-style: disc;
+      display: block;
+    }
+    .article-body ul.enumerado li {
+      margin-bottom: 0.3rem;
+    }
+    .article-body s {
+      text-decoration: underline;
+      font-weight: bold;
+      text-decoration-style: solid;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de progreso de lectura -->
+  <div id="reading-progress"></div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav id="navproperties" class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img class="navlogo" src="img/logoSVG.svg" alt="AS Consulting">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas" aria-controls="navOffcanvas" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item"><a class="nav-link nav-item-link" href="index.html">INICIO</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link nav-item-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">SERVICIOS</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Servicios/sociedades.html">Creación de SAS</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="servicios.html">Todos los Servicios</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link nav-item-link" href="nuestraempresa.html">NUESTRA EMPRESA</a></li>
+              <li class="nav-item"><a class="nav-link nav-item-link active" href="blog.html">NOVEDADES</a></li>
+              <li class="nav-item"><a class="nav-link nav-cta ms-lg-2" href="contacto.html">CONTACTO</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO DINÁMICO -->
+  <div id="post-container">
+    <!-- El JS inyecta el contenido aquí -->
+    <div class="post-not-found" id="loading-state">
+      <div class="container">
+        <p style="color:#aaa; padding-top:100px;">Cargando...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-newsletter text-center">
+        <h6>Mantente al día con las novedades fiscales</h6>
+        <p>Cambios normativos, tips contables y más — directo a tu correo.</p>
+        <form action="https://formsubmit.co/contacto@asconsulting.com.uy" method="POST" class="d-flex justify-content-center">
+          <div class="input-group">
+            <input type="email" name="email" class="form-control" placeholder="Tu correo electrónico" required>
+            <input type="hidden" name="_subject" value="Suscripción novedades AS Consulting">
+            <input type="hidden" name="_next" value="https://asconsulting.com.uy/gracias.html">
+            <button type="submit" class="btn-subscribe">Suscribirse</button>
+          </div>
+        </form>
+      </div>
+      <div class="row g-4 pb-5">
+        <div class="col-lg-4">
+          <img src="img/logoSVG.svg" alt="AS Consulting" class="footer-logo">
+          <p class="footer-desc">Servicios de asesoría y outsourcing contable, laboral e impositivo. Desde Uruguay al mundo.</p>
+          <div class="footer-social">
+            <a href="https://linkedin.com/company/asconsulting-uy/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://wa.me/59899226320" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="footer-heading">Navegación</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="nuestraempresa.html">Nuestra Empresa</a></li>
+            <li><a href="blog.html">Novedades</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="footer-heading">Contacto</h6>
+          <ul class="footer-contact">
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Las Piedras, Canelones, Uruguay</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:contacto@asconsulting.com.uy">contacto@asconsulting.com.uy</a></li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink:0;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="https://wa.me/59899226320">+598 99 226 320</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2025 AS Consulting — Todos los derechos reservados.</p>
+        <a href="https://creafinity.com.uy/" target="_blank" rel="noopener" class="footer-credit-link">
+          Diseñado por <img src="img/LogoBase.png" alt="Creafinity" class="footer-credit-logo">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/59899226320" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="Js/posts.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    /* ── Barra de progreso ── */
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = pct + '%';
+    });
+
+    /* ── Badge helper ── */
+    const BADGE_CLASSES = {
+      tributario: 'badge-tributario',
+      laboral:    'badge-laboral',
+      societario: 'badge-societario',
+      general:    'badge-general'
+    };
+
+    /* ── Render del artículo ── */
+    function renderPost(post, prevPost, nextPost) {
+      // Actualizar <title> y meta description
+      document.getElementById('page-title').textContent = post.title + ' | AS Consulting';
+      document.getElementById('meta-description').setAttribute('content', post.excerpt);
+
+      // Imagen con fallback
+      const imgTag = post.imageFallback
+        ? `<img src="${post.image}" alt="${post.imageAlt}" style="${post.imageStyle}" onerror="this.src='${post.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';">`
+        : (post.image ? `<img src="${post.image}" alt="${post.imageAlt}" style="${post.imageStyle}">` : '');
+
+      // Prev / Next cards
+      const prevCard = prevPost
+        ? `<a href="post.html?id=${prevPost.id}" class="post-nav-card" data-aos="fade-right">
+             <span class="post-nav-arrow">&#8592;</span>
+             <span class="post-nav-label">Artículo anterior</span>
+             <span class="post-nav-title">${prevPost.title}</span>
+           </a>`
+        : `<div></div>`;
+
+      const nextCard = nextPost
+        ? `<a href="post.html?id=${nextPost.id}" class="post-nav-card text-end" style="align-items:flex-end;" data-aos="fade-left">
+             <span class="post-nav-arrow">&#8594;</span>
+             <span class="post-nav-label">Artículo siguiente</span>
+             <span class="post-nav-title">${nextPost.title}</span>
+           </a>`
+        : `<div></div>`;
+
+      // Artículos relacionados (misma categoría, excluir el actual, máx 3)
+      const related = POSTS.filter(p => p.id !== post.id && p.categoryKey === post.categoryKey).slice(0, 3);
+      const relatedHTML = related.length ? `
+        <section class="related-posts" data-aos="fade-up">
+          <div class="container">
+            <h2>Artículos relacionados</h2>
+            <div class="row g-4">
+              ${related.map(p => `
+                <div class="col-md-6 col-lg-4">
+                  <div class="blog-card card" style="height:100%;">
+                    <img src="${p.image}" alt="${p.imageAlt}" style="${p.imageStyle}" ${p.imageFallback ? `onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"` : ''}>
+                    <div class="card-body">
+                      <span class="badge-categoria ${p.badgeClass}">${p.category}</span>
+                      <h5 class="card-title">${p.title}</h5>
+                      <p class="card-text">${p.excerpt}</p>
+                      <a href="post.html?id=${p.id}" class="btn-leer" style="margin-top:auto;">Leer más &raquo;</a>
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>` : '';
+
+      document.getElementById('post-container').innerHTML = `
+        <!-- ENCABEZADO DEL ARTÍCULO -->
+        <section class="article-header">
+          <div class="container">
+            <p class="article-breadcrumb"><a href="blog.html">&#8592; Novedades</a></p>
+            <span style="display:inline-block;background:rgba(240,158,6,0.2);color:rgb(240,158,6);font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:14px;">${post.category}</span>
+            <h1>${post.title}</h1>
+            <p class="article-meta">${post.author} &nbsp;·&nbsp; ${post.date}</p>
+          </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <div class="article-body">
+          ${post.content}
+        </div>
+
+        <!-- NAVEGACIÓN PREV / NEXT -->
+        <nav class="post-nav">
+          <div class="container">
+            <div class="row g-3">
+              <div class="col-6">${prevCard}</div>
+              <div class="col-6 d-flex justify-content-end">${nextCard}</div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- ARTÍCULOS RELACIONADOS -->
+        ${relatedHTML}
+      `;
+
+      // Re-inicializar AOS para los elementos inyectados
+      AOS.refresh();
+    }
+
+    /* ── 404 ── */
+    function renderNotFound() {
+      document.getElementById('post-container').innerHTML = `
+        <div class="post-not-found">
+          <div class="container">
+            <h1>Artículo no encontrado</h1>
+            <p>El artículo que buscás no existe o fue movido.</p>
+            <a href="blog.html" class="btn" style="background:rgb(29,62,95);color:white;font-weight:600;padding:12px 28px;border-radius:6px;">Ver todos los artículos</a>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ── Inicializar ── */
+    (function init() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (!id) { renderNotFound(); return; }
+
+      const idx = POSTS.findIndex(p => p.id === id);
+      if (idx === -1) { renderNotFound(); return; }
+
+      const post     = POSTS[idx];
+      const prevPost = idx > 0 ? POSTS[idx - 1] : null;
+      const nextPost = idx < POSTS.length - 1 ? POSTS[idx + 1] : null;
+
+      renderPost(post, prevPost, nextPost);
+    })();
+  </script>
+</body>
+</html>
