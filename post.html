@@ -316,7 +316,7 @@
         : '';
 
       const prevCard = prevPost
-        ? `<a href="post.html?id=${prevPost.id}" class="post-nav-card" data-aos="fade-right">
+        ? `<a href="post.html?id=${prevPost.id}" class="post-nav-card">
              <span class="post-nav-arrow">&#8592;</span>
              <span class="post-nav-label">Artículo anterior</span>
              <span class="post-nav-title">${prevPost.title}</span>
@@ -324,7 +324,7 @@
         : '<div></div>';
 
       const nextCard = nextPost
-        ? `<a href="post.html?id=${nextPost.id}" class="post-nav-card text-end" style="align-items:flex-end;" data-aos="fade-left">
+        ? `<a href="post.html?id=${nextPost.id}" class="post-nav-card text-end" style="align-items:flex-end;">
              <span class="post-nav-arrow">&#8594;</span>
              <span class="post-nav-label">Artículo siguiente</span>
              <span class="post-nav-title">${nextPost.title}</span>
