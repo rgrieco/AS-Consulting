@@ -265,7 +265,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="Js/posts.js"></script>
   <script>
     AOS.init({ once: true });
 
@@ -277,33 +276,52 @@
       document.getElementById('reading-progress').style.width = pct + '%';
     });
 
-    /* ── Badge helper ── */
-    const BADGE_CLASSES = {
-      tributario: 'badge-tributario',
-      laboral:    'badge-laboral',
-      societario: 'badge-societario',
-      general:    'badge-general'
+    /* ── Metadatos por categoría ── */
+    const CATEGORY_META = {
+      'Tributario': 'badge-tributario',
+      'Laboral':    'badge-laboral',
+      'Societario': 'badge-societario',
+      'General':    'badge-general'
     };
+
+    /* ── Renderer de bloques de contenido ── */
+    function renderSections(sections) {
+      return (sections || []).map(s => {
+        switch (s.type) {
+          case 'heading':
+            return `<h2>${s.text}</h2>`;
+          case 'paragraph':
+            return `<p>${s.text}</p>`;
+          case 'subtitle':
+            return `<li class="subtitulo">${s.text}</li>`;
+          case 'highlight':
+            return `<li class="destacado">${s.text}</li>`;
+          case 'list':
+            return `<ul class="enumerado">${(s.items || []).map(i => `<li>${i}</li>`).join('')}</ul>`;
+          default:
+            return s.text ? `<p>${s.text}</p>` : '';
+        }
+      }).join('\n');
+    }
 
     /* ── Render del artículo ── */
     function renderPost(post, prevPost, nextPost) {
-      // Actualizar <title> y meta description
       document.getElementById('page-title').textContent = post.title + ' | AS Consulting';
       document.getElementById('meta-description').setAttribute('content', post.excerpt);
 
-      // Imagen con fallback
-      const imgTag = post.imageFallback
-        ? `<img src="${post.image}" alt="${post.imageAlt}" style="${post.imageStyle}" onerror="this.src='${post.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';">`
-        : (post.image ? `<img src="${post.image}" alt="${post.imageAlt}" style="${post.imageStyle}">` : '');
+      const badgeClass = CATEGORY_META[post.category] || 'badge-general';
 
-      // Prev / Next cards
+      const imgFallback = post.imageFallback
+        ? `onerror="this.src='${post.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"`
+        : '';
+
       const prevCard = prevPost
         ? `<a href="post.html?id=${prevPost.id}" class="post-nav-card" data-aos="fade-right">
              <span class="post-nav-arrow">&#8592;</span>
              <span class="post-nav-label">Artículo anterior</span>
              <span class="post-nav-title">${prevPost.title}</span>
            </a>`
-        : `<div></div>`;
+        : '<div></div>';
 
       const nextCard = nextPost
         ? `<a href="post.html?id=${nextPost.id}" class="post-nav-card text-end" style="align-items:flex-end;" data-aos="fade-left">
@@ -311,49 +329,51 @@
              <span class="post-nav-label">Artículo siguiente</span>
              <span class="post-nav-title">${nextPost.title}</span>
            </a>`
-        : `<div></div>`;
+        : '<div></div>';
 
-      // Artículos relacionados (misma categoría, excluir el actual, máx 3)
-      const related = POSTS.filter(p => p.id !== post.id && p.categoryKey === post.categoryKey).slice(0, 3);
+      const related = window.__ALL_POSTS__
+        .filter(p => p.id !== post.id && p.category === post.category)
+        .slice(0, 3);
+
       const relatedHTML = related.length ? `
         <section class="related-posts" data-aos="fade-up">
           <div class="container">
             <h2>Artículos relacionados</h2>
             <div class="row g-4">
-              ${related.map(p => `
-                <div class="col-md-6 col-lg-4">
-                  <div class="blog-card card" style="height:100%;">
-                    <img src="${p.image}" alt="${p.imageAlt}" style="${p.imageStyle}" ${p.imageFallback ? `onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"` : ''}>
-                    <div class="card-body">
-                      <span class="badge-categoria ${p.badgeClass}">${p.category}</span>
-                      <h5 class="card-title">${p.title}</h5>
-                      <p class="card-text">${p.excerpt}</p>
-                      <a href="post.html?id=${p.id}" class="btn-leer" style="margin-top:auto;">Leer más &raquo;</a>
+              ${related.map(p => {
+                const pBadge = CATEGORY_META[p.category] || 'badge-general';
+                const pFb = p.imageFallback ? `onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"` : '';
+                return `
+                  <div class="col-md-6 col-lg-4">
+                    <div class="blog-card card" style="height:100%;">
+                      <img src="${p.image}" alt="${p.imageAlt || ''}" ${pFb}>
+                      <div class="card-body">
+                        <span class="badge-categoria ${pBadge}">${p.category}</span>
+                        <h5 class="card-title">${p.title}</h5>
+                        <p class="card-text">${p.excerpt}</p>
+                        <a href="post.html?id=${p.id}" class="btn-leer" style="margin-top:auto;">Leer más &raquo;</a>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              `).join('')}
+                  </div>`;
+              }).join('')}
             </div>
           </div>
         </section>` : '';
 
       document.getElementById('post-container').innerHTML = `
-        <!-- ENCABEZADO DEL ARTÍCULO -->
         <section class="article-header">
           <div class="container">
             <p class="article-breadcrumb"><a href="blog.html">&#8592; Novedades</a></p>
             <span style="display:inline-block;background:rgba(240,158,6,0.2);color:rgb(240,158,6);font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:14px;">${post.category}</span>
             <h1>${post.title}</h1>
-            <p class="article-meta">${post.author} &nbsp;·&nbsp; ${post.date}</p>
+            <p class="article-meta">${post.author || 'AS Consulting'} &nbsp;·&nbsp; ${post.date}</p>
           </div>
         </section>
 
-        <!-- CUERPO DEL ARTÍCULO -->
         <div class="article-body">
-          ${post.content}
+          ${renderSections(post.sections)}
         </div>
 
-        <!-- NAVEGACIÓN PREV / NEXT -->
         <nav class="post-nav">
           <div class="container">
             <div class="row g-3">
@@ -363,11 +383,9 @@
           </div>
         </nav>
 
-        <!-- ARTÍCULOS RELACIONADOS -->
         ${relatedHTML}
       `;
 
-      // Re-inicializar AOS para los elementos inyectados
       AOS.refresh();
     }
 
@@ -384,22 +402,28 @@
       `;
     }
 
-    /* ── Inicializar ── */
-    (function init() {
+    /* ── Inicializar: cargar JSON y renderizar ── */
+    async function init() {
       const params = new URLSearchParams(window.location.search);
       const id = params.get('id');
-
       if (!id) { renderNotFound(); return; }
 
-      const idx = POSTS.findIndex(p => p.id === id);
-      if (idx === -1) { renderNotFound(); return; }
+      try {
+        const res = await fetch('data/posts.json');
+        const data = await res.json();
+        const posts = data.posts || [];
+        window.__ALL_POSTS__ = posts;
 
-      const post     = POSTS[idx];
-      const prevPost = idx > 0 ? POSTS[idx - 1] : null;
-      const nextPost = idx < POSTS.length - 1 ? POSTS[idx + 1] : null;
+        const idx = posts.findIndex(p => p.id === id);
+        if (idx === -1) { renderNotFound(); return; }
 
-      renderPost(post, prevPost, nextPost);
-    })();
+        renderPost(posts[idx], posts[idx - 1] || null, posts[idx + 1] || null);
+      } catch (e) {
+        renderNotFound();
+      }
+    }
+
+    init();
   </script>
 </body>
 </html>

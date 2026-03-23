@@ -1,0 +1,161 @@
+# ============================================================
+# Decap CMS — Configuración AS Consulting
+# Documentación: https://decapcms.org/docs/
+#
+# SETUP REQUERIDO:
+#   1. Registrar un GitHub OAuth App en:
+#      https://github.com/settings/developers
+#      - Homepage URL: https://asconsulting.com.uy
+#      - Callback URL: https://asconsulting.com.uy/admin/
+#   2. Reemplazar YOUR_GITHUB_CLIENT_ID con el Client ID obtenido
+# ============================================================
+
+backend:
+  name: github
+  repo: rgrieco/AS-Consulting
+  branch: blog2
+  auth_type: pkce
+  app_id: YOUR_GITHUB_CLIENT_ID
+
+media_folder: img
+public_folder: img
+
+locale: es
+
+collections:
+  - name: blog
+    label: Blog — Publicaciones
+    files:
+      - label: Todas las publicaciones
+        name: posts
+        file: data/posts.json
+        fields:
+          - label: Publicaciones
+            name: posts
+            widget: list
+            summary: "{{fields.title}} · {{fields.category}} · {{fields.date}}"
+            label_singular: Publicación
+            fields:
+
+              - label: ID (slug)
+                name: id
+                widget: string
+                hint: "Identificador único sin espacios ni tildes. Ej: nueva-ley-irpf-2025"
+                pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Solo minúsculas, números y guiones"]
+
+              - label: Título
+                name: title
+                widget: string
+
+              - label: Categoría
+                name: category
+                widget: select
+                options:
+                  - { label: Tributario,  value: Tributario  }
+                  - { label: Laboral,     value: Laboral     }
+                  - { label: Societario,  value: Societario  }
+                  - { label: General,     value: General     }
+
+              - label: Fecha de publicación
+                name: date
+                widget: string
+                hint: "Texto libre. Ej: Marzo 2025"
+
+              - label: Fecha para ordenamiento
+                name: dateSort
+                widget: date
+                format: YYYY-MM-DD
+                date_format: DD/MM/YYYY
+
+              - label: Autor
+                name: author
+                widget: string
+                default: AS Consulting
+
+              - label: Resumen
+                name: excerpt
+                widget: text
+                hint: "Aparece en la tarjeta del blog y como descripción en Google (máx. 160 caracteres recomendados)"
+
+              - label: Imagen destacada
+                name: image
+                widget: image
+                required: false
+                hint: "Se muestra en la tarjeta del blog y en el encabezado del artículo"
+
+              - label: Texto alternativo de la imagen
+                name: imageAlt
+                widget: string
+                required: false
+
+              - label: Imagen de reemplazo (fallback)
+                name: imageFallback
+                widget: image
+                required: false
+                hint: "Se muestra si la imagen principal no carga"
+
+              - label: Artículo destacado en portada
+                name: featured
+                widget: boolean
+                default: false
+                hint: "Solo puede haber un artículo destacado a la vez"
+
+              - label: Contenido del artículo
+                name: sections
+                widget: list
+                label_singular: Bloque de contenido
+                summary: "{{fields.type}}: {{fields.text}}"
+                types:
+
+                  - label: Encabezado de sección
+                    name: heading
+                    widget: object
+                    summary: "Encabezado: {{fields.text}}"
+                    fields:
+                      - label: Texto del encabezado
+                        name: text
+                        widget: string
+                        hint: "Aparece centrado en color dorado"
+
+                  - label: Párrafo
+                    name: paragraph
+                    widget: object
+                    summary: "Párrafo: {{fields.text}}"
+                    fields:
+                      - label: Texto
+                        name: text
+                        widget: text
+
+                  - label: Subtítulo
+                    name: subtitle
+                    widget: object
+                    summary: "Subtítulo: {{fields.text}}"
+                    fields:
+                      - label: Texto del subtítulo
+                        name: text
+                        widget: string
+                        hint: "Aparece en azul oscuro, más pequeño que el encabezado"
+
+                  - label: Elemento destacado
+                    name: highlight
+                    widget: object
+                    summary: "Destacado: {{fields.text}}"
+                    fields:
+                      - label: Texto
+                        name: text
+                        widget: text
+                        hint: "Aparece con borde dorado a la izquierda"
+
+                  - label: Lista de elementos
+                    name: list
+                    widget: object
+                    summary: "Lista ({{fields.items.length}} elementos)"
+                    fields:
+                      - label: Elementos de la lista
+                        name: items
+                        widget: list
+                        label_singular: Elemento
+                        field:
+                          label: Texto del elemento
+                          name: item
+                          widget: string

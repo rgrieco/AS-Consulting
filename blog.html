@@ -392,11 +392,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="Js/posts.js"></script>
   <script>
     AOS.init({ once: true });
 
+    const CATEGORY_META = {
+      'Tributario': 'badge-tributario',
+      'Laboral':    'badge-laboral',
+      'Societario': 'badge-societario',
+      'General':    'badge-general'
+    };
+
     let filtroActivo = 'todos';
+    let ALL_POSTS = [];
 
     function setFiltro(cat, btn) {
       filtroActivo = cat;
@@ -406,17 +413,15 @@
     }
 
     function renderGrid() {
-      const query = (document.getElementById('search-input').value || '').toLowerCase().trim();
-      const grid  = document.getElementById('articulos-grid');
+      const query      = (document.getElementById('search-input').value || '').toLowerCase().trim();
+      const grid       = document.getElementById('articulos-grid');
       const featuredEl = document.getElementById('featured-container');
       const noResults  = document.getElementById('no-results');
 
-      // Encontrar el post destacado (featured:true)
-      const featuredPost = POSTS.find(p => p.featured);
+      const featuredPost = ALL_POSTS.find(p => p.featured);
 
-      // Filtrar posts para la grilla
-      const filtered = POSTS.filter(p => {
-        const matchCat    = filtroActivo === 'todos' || p.categoryKey === filtroActivo;
+      const filtered = ALL_POSTS.filter(p => {
+        const matchCat    = filtroActivo === 'todos' || p.category.toLowerCase() === filtroActivo;
         const matchSearch = !query
           || p.title.toLowerCase().includes(query)
           || p.excerpt.toLowerCase().includes(query)
@@ -424,61 +429,70 @@
         return matchCat && matchSearch;
       });
 
-      // Mostrar/ocultar el artículo destacado
       if (featuredPost) {
-        const showFeatured = filtered.some(p => p.id === featuredPost.id);
-        featuredEl.style.display = showFeatured ? '' : 'none';
+        featuredEl.style.display = filtered.some(p => p.id === featuredPost.id) ? '' : 'none';
       }
 
-      // Generar tarjetas (excluir el destacado de la grilla)
       const gridPosts = filtered.filter(p => !p.featured);
 
-      if (gridPosts.length === 0 && filtered.length === 0) {
+      if (filtered.length === 0) {
         grid.innerHTML = '';
         noResults.style.display = 'block';
       } else {
         noResults.style.display = 'none';
-        grid.innerHTML = gridPosts.map((p, i) => `
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
-            <div class="blog-card card">
-              <img src="${p.image}" alt="${p.imageAlt}" style="${p.imageStyle}" ${p.imageFallback ? `onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"` : ''}>
-              <div class="card-body">
-                <span class="badge-categoria ${p.badgeClass}">${p.category}</span>
-                <h5 class="card-title">${p.title}</h5>
-                <p class="card-text">${p.excerpt}</p>
-                <div class="card-meta">📅 ${p.date}</div>
-                <a href="post.html?id=${p.id}" class="btn-leer">Leer más &raquo;</a>
+        grid.innerHTML = gridPosts.map((p, i) => {
+          const badge = CATEGORY_META[p.category] || 'badge-general';
+          const fb = p.imageFallback ? `onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"` : '';
+          return `
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
+              <div class="blog-card card">
+                <img src="${p.image}" alt="${p.imageAlt || ''}" ${fb}>
+                <div class="card-body">
+                  <span class="badge-categoria ${badge}">${p.category}</span>
+                  <h5 class="card-title">${p.title}</h5>
+                  <p class="card-text">${p.excerpt}</p>
+                  <div class="card-meta">📅 ${p.date}</div>
+                  <a href="post.html?id=${p.id}" class="btn-leer">Leer más &raquo;</a>
+                </div>
               </div>
-            </div>
-          </div>
-        `).join('');
+            </div>`;
+        }).join('');
         AOS.refresh();
       }
     }
 
-    /* ── Render inicial del artículo destacado ── */
-    (function renderFeatured() {
-      const p = POSTS.find(post => post.featured);
+    function renderFeatured(posts) {
+      const p = posts.find(post => post.featured);
       if (!p) return;
-      const imgTag = p.imageFallback
-        ? `<img src="${p.image}" alt="${p.imageAlt}" onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';">`
-        : `<img src="${p.image}" alt="${p.imageAlt}" style="${p.imageStyle}">`;
-
+      const badge = CATEGORY_META[p.category] || 'badge-general';
+      const fb = p.imageFallback ? `onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"` : '';
       document.getElementById('featured-container').innerHTML = `
         <div class="featured-article" data-aos="fade-up">
-          ${imgTag}
+          <img src="${p.image}" alt="${p.imageAlt || ''}" ${fb}>
           <div class="featured-text">
             <span class="badge-destacado">Destacado · ${p.category}</span>
             <h2>${p.title}</h2>
             <p>${p.excerpt}</p>
             <a href="post.html?id=${p.id}" class="btn-featured">Leer artículo completo &raquo;</a>
           </div>
-        </div>
-      `;
-    })();
+        </div>`;
+    }
 
-    /* ── Render inicial de la grilla ── */
-    renderGrid();
+    /* ── Cargar datos y renderizar ── */
+    async function init() {
+      try {
+        const res = await fetch('data/posts.json');
+        const data = await res.json();
+        ALL_POSTS = data.posts || [];
+        renderFeatured(ALL_POSTS);
+        renderGrid();
+      } catch (e) {
+        document.getElementById('articulos-grid').innerHTML =
+          '<p class="text-center text-muted py-5">No se pudieron cargar las publicaciones.</p>';
+      }
+    }
+
+    init();
   </script>
 </body>
 </html>
