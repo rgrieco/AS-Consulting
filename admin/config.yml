@@ -15,7 +15,7 @@ backend:
   repo: rgrieco/AS-Consulting
   branch: blog2
   auth_type: pkce
-  app_id: YOUR_GITHUB_CLIENT_ID
+  app_id: Ov23liRqqgRX44zQH8iR
 
 media_folder: img
 public_folder: img
@@ -36,12 +36,15 @@ collections:
             summary: "{{fields.title}} · {{fields.category}} · {{fields.date}}"
             label_singular: Publicación
             fields:
-
               - label: ID (slug)
                 name: id
                 widget: string
                 hint: "Identificador único sin espacios ni tildes. Ej: nueva-ley-irpf-2025"
-                pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Solo minúsculas, números y guiones"]
+                pattern:
+                  [
+                    "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "Solo minúsculas, números y guiones",
+                  ]
 
               - label: Título
                 name: title
@@ -51,10 +54,10 @@ collections:
                 name: category
                 widget: select
                 options:
-                  - { label: Tributario,  value: Tributario  }
-                  - { label: Laboral,     value: Laboral     }
-                  - { label: Societario,  value: Societario  }
-                  - { label: General,     value: General     }
+                  - { label: Tributario, value: Tributario }
+                  - { label: Laboral, value: Laboral }
+                  - { label: Societario, value: Societario }
+                  - { label: General, value: General }
 
               - label: Fecha de publicación
                 name: date
@@ -106,7 +109,6 @@ collections:
                 label_singular: Bloque de contenido
                 summary: "{{fields.type}}: {{fields.text}}"
                 types:
-
                   - label: Encabezado de sección
                     name: heading
                     widget: object
