@@ -81,13 +81,88 @@
     /* ── Artículos relacionados ── */
     .related-posts {
       padding: 60px 0 80px;
-      background: #fff;
+      background: #f8fafb;
+      border-top: 1px solid #e9ecef;
     }
     .related-posts h2 {
       font-size: 22px;
       font-weight: 700;
       color: rgb(29, 62, 95);
       margin-bottom: 32px;
+    }
+    .related-posts .blog-card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      overflow: hidden;
+    }
+    .related-posts .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.13);
+    }
+    .related-posts .blog-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .related-posts .blog-card .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .related-posts .badge-categoria {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .related-posts .badge-tributario { background: #e8f0fe; color: #1a56db; }
+    .related-posts .badge-laboral    { background: #fef3e2; color: #b45309; }
+    .related-posts .badge-societario { background: #e6f4ea; color: #1e6e42; }
+    .related-posts .badge-general    { background: #f3e8ff; color: #6d28d9; }
+    .related-posts .card-title {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: rgb(29, 62, 95);
+      margin-bottom: 8px;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .related-posts .card-text {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.55;
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .related-posts .btn-leer {
+      border: 2px solid rgb(29, 62, 95);
+      color: rgb(29, 62, 95);
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 7px 16px;
+      align-self: flex-start;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .related-posts .btn-leer:hover {
+      background: rgb(29, 62, 95);
+      color: white;
     }
 
     /* ── Estado de carga / 404 ── */
@@ -357,15 +432,16 @@
               ${related.map(p => {
                 const pBadge = CATEGORY_META[p.category] || 'badge-general';
                 const pFb = p.imageFallback ? `onerror="this.src='${p.imageFallback}'; this.style.padding='30px'; this.style.background='#f0f4f8';"` : '';
+                const pStyle = p.imageStyle ? `style="${p.imageStyle}"` : '';
                 return `
-                  <div class="col-md-6 col-lg-4">
-                    <div class="blog-card card" style="height:100%;">
-                      <img src="${p.image}" alt="${p.imageAlt || ''}" ${pFb}>
+                  <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="blog-card card w-100">
+                      <img src="${p.image}" alt="${p.imageAlt || ''}" ${pStyle} ${pFb}>
                       <div class="card-body">
                         <span class="badge-categoria ${pBadge}">${p.category}</span>
                         <h5 class="card-title">${p.title}</h5>
                         <p class="card-text">${p.excerpt}</p>
-                        <a href="post.html?id=${p.id}" class="btn-leer" style="margin-top:auto;">Leer más &raquo;</a>
+                        <a href="post.html?id=${p.id}" class="btn-leer">Leer más &raquo;</a>
                       </div>
                     </div>
                   </div>`;
