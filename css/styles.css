@@ -315,6 +315,21 @@ img:not(.navlogo):not(.footer-logo):not(.service-icon):not(.profile-img):not(.se
   margin-bottom: 20px;
 }
 
+.service-icon-large {
+  width: 96px;
+  height: 96px;
+  margin-bottom: -12px;
+}
+
+.service-icon-large + .service-card-title {
+  margin-top: 8px;
+}
+
+.service-icon-lower {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
 .service-card-title {
   font-family: var(--font-heading);
   font-size: 18px;

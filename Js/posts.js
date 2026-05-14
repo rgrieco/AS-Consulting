@@ -70,7 +70,7 @@ const POSTS = [
 
   {
     id: "creacion-sas",
-    title: "Creación de Sociedades por Acciones Simplificadas (SAS)",
+    title: "Asesoramiento de Sociedades por Acciones Simplificadas (SAS)",
     category: "Societario",
     categoryKey: "societario",
     badgeClass: "badge-societario",
@@ -78,12 +78,12 @@ const POSTS = [
     dateSort: "2022-08-01",
     author: "AS Consulting",
     excerpt: "Este tipo societario se vuelve una opción cada vez más conveniente para emprendedores y empresas. Menor costo, mayor agilidad y estructura flexible.",
-    image: "img/consultant.svg",
-    imageStyle: "padding: 30px; background:#f0f4f8;",
+    image: "img/sas.jpg",
+    imageStyle: "",
     imageAlt: "Sociedad por Acciones Simplificadas SAS Uruguay",
     featured: false,
     content: `
-      <h2>Creación de Sociedades Anónimas Simplificadas (SAS)</h2>
+      <h2>Asesoramiento de Sociedades Anónimas Simplificadas (SAS)</h2>
 
       <p>Las empresas con aportación Rural e Industria y Comercio pueden adoptar este tipo
       social mediante constitución, transformación, regularización o conversión.</p>
@@ -182,8 +182,8 @@ const POSTS = [
     dateSort: "2022-07-01",
     author: "AS Consulting",
     excerpt: "Mediante la negociación colectiva en Consejos de Salarios se fijan los mínimos por categoría. ¿Cómo se regulan los salarios pactados en dólares?",
-    image: "img/laboral.svg",
-    imageStyle: "padding: 30px; background:#f0f4f8;",
+    image: "img/consejodesalarios.jpg",
+    imageStyle: "",
     imageAlt: "Salarios en moneda extranjera Uruguay",
     featured: false,
     content: `
@@ -255,8 +255,8 @@ const POSTS = [
     dateSort: "2022-02-01",
     author: "AS Consulting",
     excerpt: "Ser residente fiscal implica convertirse en contribuyente del IRPF. Conocé los criterios para acreditar residencia fiscal en Uruguay y cómo afecta tus obligaciones.",
-    image: "img/taxes.svg",
-    imageStyle: "padding: 30px; background:#f0f4f8;",
+    image: "img/palacio.jpg",
+    imageStyle: "",
     imageAlt: "Residencia Fiscal Uruguay",
     featured: false,
     content: `
